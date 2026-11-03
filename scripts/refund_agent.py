@@ -193,10 +193,12 @@ def issue_refund(order_id, refund_inr):
     if order["delivery_minutes"] is None or order["delivery_minutes"] <= 45:
         return {"error": "delivery does not qualify for a refund"}
 
+    if refund_inr != round(float(order["order_amount"]), 2):
+        return {"error": "refund amount does not match order amount"}
+
     record_ledger(order_id, refund_inr, "issue_refund")
 
     return {"refund_inr": refund_inr}
-
 
 # TOOL 5: Escalate refund to human
 
