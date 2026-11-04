@@ -491,7 +491,7 @@ Privacy audit results:
 | Email addresses | 55 |
 | Phone numbers | 91 |
 | Order IDs | 132 |
-| **Total** | **278** |
+| Total | 278 |
 
 A second scan of the redacted text found zero remaining matches for the three targeted identifier patterns.
 
@@ -742,7 +742,7 @@ A fixed plan can be simpler for predictable workflows, but it may not adapt as n
 
 Limitations: The agent uses a deterministic mock model and synthetic data. The seven-day eligibility helper is defined separately but is not invoked by the scripted scenario flow. The supplied scenarios are treated as requests within the policy window. A production implementation would also require stronger transaction handling, duplicate-action protection, authorization and explicit policy-window enforcement.
 
-## Limitations and Next Steps
+## Limitations 
 
 - Synthetic data: The project uses generated data and does not represent real Instamart customers, transactions, or operational policies.
 - Mock language model: LLM behaviour is simulated using the supplied `mock_llm.py`; results may differ from a production language model.
@@ -752,10 +752,3 @@ Limitations: The agent uses a deterministic mock model and synthetic data. The s
 - Policy retrieval:TF-IDF retrieval uses keyword similarity and may miss relevant information when wording differs from the policy documents.
 - Refund agent: The agent uses predefined tools and synthetic scenarios. It is not connected to a real payment or refund system.
 
-### Next Steps
-
-- Evaluate the lapse model on additional independent datasets.
-- Improve privacy detection and output validation.
-- Explore semantic retrieval for policy questions.
-- Add stronger transaction auditing and production-grade safeguards.
-- Test the agent with more varied scenarios and policy edge cases.
